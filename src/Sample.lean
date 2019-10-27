@@ -1,7 +1,7 @@
 import Init.System.IO
-import data.bert
-import data.parser
-import network.n2o
+import Data.BERT
+import Data.Parser
+import Network.N2O
 
 def echoProto : Proto :=
 { prot := Msg,

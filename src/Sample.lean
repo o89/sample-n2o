@@ -2,16 +2,13 @@ import Init.System.IO
 import N2O.Default
 
 def echoProto : Proto :=
-{ prot := Msg,
-  ev := Option String,
-  res := Result,
-  req := Req,
+{ ev := Option String,
   nothing := Result.ok,
   proto := λ p => match p with
     | Msg.text s => some s
     | _ => none }
 
-def echo : echoProto.ev → echoProto.res
+def echo : echoProto.ev → Result
 | none => Result.ok
 | some s => Result.reply (Msg.text s)
 
